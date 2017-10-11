@@ -1,6 +1,30 @@
 # Frequency Analysis of Words
 
-[TODO. There will be project description]
+This script analys input text and extract 10 most frequncy words from it.
+
+# Quickstart
+
+You can download and run it directly through console
+
+Example of script launch on Linux, Python 3.5:
+
+```#!bash
+
+4_fr.py New.txt
+1 python
+2 для
+3 новичков
+4 вывод
+5 русских
+6 начало
+7 нояб
+8 c
+9 сообщений
+10 у
+
+
+```
+You also can same run it on Windows
 
 # Project Goals
 
