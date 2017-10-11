@@ -1,4 +1,5 @@
 import re
+import  argparse
 from collections import Counter
 
 def load_data(filepath):
@@ -21,11 +22,19 @@ def get_most_frequent_words(text):
     word_counts = Counter(clear_words)
     for i,x in enumerate(word_counts):
         if i < 10:
-            print(i,x)
+            print(i+1,x)
         else:
             break
 
 
+def create_parser():
+    parser = argparse.ArgumentParser(description='-->  Frequency Analysis of Words <--')
+    parser.add_argument("path", nargs=1, help="path to input text")
+    return parser
+
+
 if __name__ == '__main__':
-    filepath = 'new.txt'
-    get_most_frequent_words(load_data(filepath))
+    parser = create_parser()
+    namespace = parser.parse_args()
+    if namespace.path:
+        get_most_frequent_words(load_data(namespace.path[0]))
