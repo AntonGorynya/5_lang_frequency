@@ -19,7 +19,7 @@ def get_most_frequent_words(text):
             clear_word = re.match(regex, word).group('clear_word')
             clear_word = re.match('\D+', clear_word).group()
             clear_words.append(clear_word)
-        except:
+        except AttributeError:
             pass
     word_counts = Counter(clear_words)
     for number, word in enumerate(word_counts):
