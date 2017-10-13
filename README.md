@@ -10,7 +10,7 @@ Example of script launch on Linux, Python 3.5:
 
 ```#!bash
 
-4_fr.py New.txt
+4_fr.py <Your_text_file.txt>
 1 python
 2 для
 3 новичков
