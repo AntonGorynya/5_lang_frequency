@@ -13,9 +13,9 @@ def get_most_frequent_words(text):
     text = text.lower()
     regex = re.compile("(?P<clear_word>[^\W\d]+)")
     clear_words = regex.findall(text)
-    print (clear_words)
+    print(clear_words)
     word_counts = Counter(clear_words)
-    return (word_counts)
+    return word_counts
 
 
 def create_parser():
@@ -26,7 +26,7 @@ def create_parser():
 
 def print_top_words(word_counts, quantity):
     for number, word in enumerate(word_counts.most_common(quantity)):
-         print(number + 1, word[0])
+        print(number + 1, word[0])
 
 
 if __name__ == '__main__':
