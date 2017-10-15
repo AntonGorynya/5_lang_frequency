@@ -8,7 +8,7 @@ You can download and run it directly through console
 
 Example of script launch on Linux, Python 3.5:
 
-```#!bash
+```bash
 
 4_fr.py <Your_text_file.txt>
 1 python
