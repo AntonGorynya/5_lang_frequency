@@ -10,12 +10,11 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text):
+    top_count = 10
     text = text.lower()
-    regex = re.compile("(?P<clear_word>[^\W\d]+)")
-    clear_words = regex.findall(text)
-    print(clear_words)
+    clear_words = re.findall("([^\W\d]+)", text)
     word_counts = Counter(clear_words)
-    return word_counts
+    return word_counts.most_common(top_count)
 
 
 def create_parser():
@@ -24,15 +23,15 @@ def create_parser():
     return parser
 
 
-def print_top_words(word_counts, quantity):
-    for number, word in enumerate(word_counts.most_common(quantity)):
-        print(number + 1, word[0])
+def print_top_words(word_counts):
+    for number, word_count in enumerate(word_counts, start=1):
+        word, count = word_count
+        print(number, word)
 
 
 if __name__ == '__main__':
     parser = create_parser()
     args = parser.parse_args()
-    top_count = 10
     if args.path:
         word_counts = get_most_frequent_words(load_data(args.path))
-        print_top_words(word_counts, top_count)
+        print_top_words(word_counts)
