@@ -24,8 +24,7 @@ def create_parser():
 
 
 def print_top_words(word_counts):
-    for number, word_count in enumerate(word_counts, start=1):
-        word, count = word_count
+    for number, (word, count) in enumerate(word_counts, start=1):
         print(number, word)
 
 
