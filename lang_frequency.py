@@ -31,6 +31,5 @@ def print_top_words(word_counts):
 if __name__ == '__main__':
     parser = create_parser()
     args = parser.parse_args()
-    if args.path:
-        word_counts = get_most_frequent_words(load_data(args.path))
-        print_top_words(word_counts)
+    word_counts = get_most_frequent_words(load_data(args.path))
+    print_top_words(word_counts)
